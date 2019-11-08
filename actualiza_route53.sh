@@ -7,7 +7,7 @@ PLANTILLA=plantilla_registrodns.json
 JSON=registrodns.json
 
 # Zona Hostedada
-ZONA=`aws route53 list-hosted-zones-by-name  | jq --arg name "tyc.vass.es." -r '.HostedZones | .[] | select(.Name=="\($name)") | .Id'`
+ZONA=`aws route53 list-hosted-zones-by-name  | jq --arg name "tuzona.delegada.es." -r '.HostedZones | .[] | select(.Name=="\($name)") | .Id'`
 
 # IP del nodo
 IPNODO=`curl http://169.254.169.254/latest/meta-data/public-ipv4 2>/dev/null`
